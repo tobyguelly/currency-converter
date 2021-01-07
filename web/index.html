@@ -8,45 +8,42 @@
 <body>
     <div id="root" align="center">
         <h1>Currency Converter</h1>
-        <p>
-            We are using node <script>document.write(process.versions.node)</script>,
-            Chrome <script>document.write(process.versions.chrome)</script>,
-            and Electron <script>document.write(process.versions.electron)</script>.<br />
-            Currency API: http://currencies.apps.grandtrunk.net/getlatest/
-        </p>
         <form>
-            <input type="number" placeholder="AMOUNT EUR" id="EUR">
-            <input type="number" placeholder="AMOUNT USD" id="USD">
+            <input class="moneyInput" type="text" placeholder="Enter Euro" id="EUR" oninput="validNumber('EUR')">
+            <span onclick="convert('EUR', 'USD')">EUR</span>
+            <br /><br />
+            <input class="moneyInput" type="text" placeholder="Enter Dollar" id="USD" oninput="validNumber('USD')">
+            <span onclick="convert('USD', 'EUR')">USD</span>
         </form>
-        <button onclick="convert('EUR', 'USD')">EUR -> USD</button>
-        <button onclick="convert('USD', 'EUR')">USD -> EUR</button>
-        <br/><br/><br/><br/><br/>
-        <form>
-            <input type="text" placeholder="CUSTOM (BTC)" id="currencyName">
-            <input type="number" placeholder="AMOUNT (1)" id="currencyAmount">
-        </form>
-        <button onclick="convertCustom(document.getElementById('currencyName').value, 'EUR')">CUSTOM -> EUR</button>
-        <p class="footer">Made by Tobias Gülly for School</p>
+        <p id="hint"></p>
     </div>
-    <script src="src/MoneyConverter.js"></script>
+<script src="src/MoneyConverter.js"></script>
     <script>
-        function convert(from, to) {
+        let items = document.getElementsByClassName("moneyInput");
+        for(let i = 0; i < items.length; i++) {
+            items[i].addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    if(i === 0) convert('EUR', 'USD');
+                    if(i === 1) convert('USD', 'EUR');
+                    return false;
+                }
+            })
+        }
+        async function convert(from, to) {
+            if(!validNumber(from)) return;
             let money = parseFloat(document.getElementById(from).value) || 0;
             let mc = new MoneyConverter(from, to);
             document.getElementById(to).innerText = "Fetching Data...";
-            mc.getLatestData(function update(data) {
-                data = parseFloat(data) * money;
-                document.getElementById(to).value = data.toString();
-            })
+            let response = await mc.getLatestData();
+            document.getElementById(to).value = money * parseFloat(response);
         }
-        function convertCustom(from, to) {
-            let money = parseFloat(document.getElementById("currencyAmount").value) || 0;
-            let mc = new MoneyConverter(from, to);
-            document.getElementById(to).innerText = "Fetching Data...";
-            mc.getLatestData(function update(data) {
-                data = parseFloat(data) * money;
-                document.getElementById(to).value = data.toString();
-            })
+        function validNumber(id) {
+            if(isNaN(document.getElementById(id).value) || document.getElementById(id).value == 0 || document.getElementById(id).value == "") {
+                document.getElementById("hint").innerText = "Please enter a valid number!";
+                return false;
+            }
+            else document.getElementById("hint").innerText = "";
+            return true;
         }
     </script>
 </body>

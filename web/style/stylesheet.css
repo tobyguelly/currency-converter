@@ -1,44 +1,104 @@
 
 @font-face {
-    font-family: Roboto;
-    src: url('../fonts/Roboto-Regular.ttf');
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf');
 }
 
-.footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+@font-face {
+  font-family: DoHyeon;
+  src: url('../fonts/DoHyeon-Regular.ttf');
+}
+
+@font-face {
+  font-family: BebasNeue;
+  src: url('../fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+  font-family: Aileron;
+  src: url('../fonts/Aileron-Regular.otf');
 }
 
 body {
-    font-family: Roboto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-image: url("../assets/background-image.png");
-    background-color: #FFFFFF;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    font-size: 400%;
+  font-size: 10px;
+  font-family: Aileron, sans-serif;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(270deg, #ffb600, #ff6700);
+  background-size: 400% 400%;
+  -webkit-animation: background 10s ease infinite;
+  -moz-animation: background 10s ease infinite;
+  animation: background 10s ease infinite;
 }
 
 #root {
-    margin-top: 5%;
-    margin-left: 20%;
-    margin-right: 20%;
+  margin-top: 10%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 500%;
+}
+
+form {
+  left: 50%;
+  transform: translateX(20px);
 }
 
 input {
-    font-family: Roboto;
-    font-size: 150%;
+  outline: none;
+  border: none;
+  font-family: Consolas;
 }
 
-button {
-    margin-top: 3%;
-    font-family: Roboto;
-    font-size: 130%;
+.moneyInput {
+  width: 40%;
+  border-radius: 20px;
+  padding: 15px;
+  opacity: 60%;
+}
+
+span {
+  top: -1px;
+  position: relative;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  left: -75px;
+  font-size: 120%;
+  font-weight: bold;
+  border-radius: 20px;
+  font-family: Roboto;
+}
+
+span:hover {
+  top: -1px;
+  position: relative;
+  padding: 10px 20px;
+  background: white;
+  left: -75px;
+  border-radius: 20px;
+  font-size: 120%;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: Roboto;
+}
+
+@-webkit-keyframes background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
