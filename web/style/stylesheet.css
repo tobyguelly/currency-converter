@@ -1,0 +1,44 @@
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+body {
+    font-family: Roboto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("../assets/background-image.png");
+    background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    font-size: 400%;
+}
+
+#root {
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+input {
+    font-family: Roboto;
+    font-size: 150%;
+}
+
+button {
+    margin-top: 3%;
+    font-family: Roboto;
+    font-size: 130%;
+}
