@@ -1,7 +1,7 @@
 # Currency Converter💰
 This is a small currency converter written with node and electron for school. It fetches latest prices from an API and calculates the differences to the selected currencies.
 
-![Program Preview](https://i.imgur.com/AcmfKAx.png =20x)
+![Program Preview](https://i.imgur.com/AcmfKAx.png)
 
 ## How to run🔧
 1) Install all node dependencies by using ``npm i`` - the dependencies are listed in the ``package.json`` file!
