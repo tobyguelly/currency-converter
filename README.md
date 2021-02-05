@@ -12,4 +12,4 @@ To install the release, make sure to have the ZIP-File from the releases downloa
 
 ## What did I learn?🧐
 - How to use electron in a desktop app
-- How to create a software installer wizard for own programs
+- How to create a software installer wizard for own programs with Inno Setup Compiler
