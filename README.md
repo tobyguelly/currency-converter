@@ -6,6 +6,7 @@ This is a small currency converter written with node and electron for school. It
 2) Make sure that electron is properly installed, like in [this example](https://www.electronjs.org/docs/tutorial/quick-start).
 3) To run the project, type ``npm start`` in the terminal in your project folder.
 3) To build the project, type ``npm run build`` in the terminal - it will create a new folder called ``out`` where you can find the current build. Now you can run the EXE-File to open your project.
+![Program Preview](https://i.imgur.com/AcmfKAx.png)
 
 ### Installing the Release💻
 To install the release, make sure to have the ZIP-File from the releases downloaded, and put to a location you want. Now just add a shortcut of the EXE-File to the project, on your desktop or wherever you want. Now you can run the software.
